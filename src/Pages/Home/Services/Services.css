@@ -1,0 +1,42 @@
+.services-container{
+    display: grid;
+    grid-template-columns:repeat(3 ,1fr);
+    grid-gap: 20px;
+   
+}
+.title{
+    text-align:center;
+    font-size:25px;
+    margin: 20px;
+    font-weight: bold;
+    color:rgb(43, 13, 2);
+}
+@media only screen and (max-width:576px){
+    .services-container{
+        grid-template-columns:repeat(1 ,1fr);
+    }
+}
+
+@media  screen and (min-width:577px) and (max-width:992px){
+    .services-container{
+        grid-template-columns:repeat(2 ,1fr);
+    }
+}
+
+
+
+
+
+/* 
+https://i.ibb.co/L0MJDhk/md-kabir-hossen-ufm-Weh-JVii0-unsplash-ccexpress.jpg
+https://i.ibb.co/pz22TKH/guillaume-briard-l-SXp-V8b-De-MA-unsplash-ccexpress.jpg
+https://i.ibb.co/swrkwKH/luca-baggio-e-KU3-JGNCCMg-unsplash-ccexpress.jpg
+https://i.ibb.co/K5ySt4J/thomas-griesbeck-BS-Uxe8w-U5-Y-unsplash-ccexpress.jpg
+https://i.ibb.co/dJJQ01r/chris-holgersson-zshy-Cr6-HGw0-unsplash-ccexpress.jpg
+https://i.ibb.co/4scdspb/cadu-de-castro-alves-h-ECLlj-C7-Wm8-unsplash-ccexpress.jpg
+https://i.ibb.co/XxWZDT3/mohsen-taheri-h-P1-T2-EM1d-Uw-unsplash-ccexpress.jpg
+https://i.ibb.co/2ZJ0C1p/irish83-q-Bu-Yqr-LXUDI-unsplash-ccexpress.jpg
+https://i.ibb.co/L0MJDhk/md-kabir-hossen-ufm-Weh-JVii0-unsplash-ccexpress.jpg
+https://i.ibb.co/6vnjnXv/mojtaba-mosayebzadeh-sq-QYk-DLG-U-unsplash-ccexpress.jpg
+
+*/

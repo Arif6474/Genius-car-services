@@ -1,0 +1,44 @@
+.service-container{
+    border: 1px solid rgb(206, 201, 201);
+    border-radius: 10px;
+}
+.service-container img{
+    width: 100%;
+    border-radius: 10px;
+}
+.service{
+    margin-left: 10px;
+}
+.service-title{
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(35, 26, 4);
+}
+.service-price{
+    font-size: 18px;
+    color:rgb(249, 197, 67);
+    font-weight: bold;
+    
+}
+.service-description{
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 0.8;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.service-btn {
+    width: 100%;
+    background-color:rgb(37, 130, 37);
+    padding: 10px;
+    border-radius: 5px;
+    border:none;
+    color:white;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+.service-btn:hover{
+    background-color:rgb(8, 26, 8);
+}

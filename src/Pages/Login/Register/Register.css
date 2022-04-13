@@ -1,0 +1,44 @@
+.register-container{
+    width: 50%;
+    margin : 20px auto;
+    box-shadow: 0 0 10px rgb(0, 0, 0 ,0.1);
+    padding: 20px
+
+}
+.register-container input{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+    
+    padding-left:10px;
+    border: 1px solid rgb(251, 233, 180);
+    border-radius: 5px;
+}
+
+.register-title {
+    text-align: center;
+    color: rgb(87, 220, 196)
+}
+
+.register-button{
+    background-color:rgb(193, 249, 173);
+    color:rgb(55, 69, 83);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    margin: 20px auto;
+    font-weight: bold;
+    font-size:20px;
+    cursor: pointer;
+}
+.register-button:hover{
+    background-color:rgb(120, 234, 78);
+    color:white;
+}
+label{
+    color:rgb(128, 118, 118);
+    font-size: 15px;
+    font-weight:500;
+}
