@@ -4,6 +4,7 @@ import './Register.css'
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from '../../Shared/Loading/Loading';
 
 const Register = () => {
     const [agree , setAgree] = useState(false);
@@ -19,6 +20,10 @@ const Register = () => {
     const navigateLogin = event => {
         navigate('/login');
     }
+    if(loading){
+        return <Loading></Loading>
+    }
+    
     if(user){
         console.log(user);
     }
@@ -52,6 +57,7 @@ const Register = () => {
           </form>
           <p>Already have an account? <span onClick={navigateLogin} className="text-danger">Please Login</span> </p>
         <SocialLogin></SocialLogin>
+        
         </div>
     );
 };
