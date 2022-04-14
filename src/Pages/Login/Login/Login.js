@@ -1,11 +1,17 @@
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
-  
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  const handleResetPassword = async () => {
+    const email = emailRef.current.value;
+    await sendPasswordResetEmail(email);
+    alert('Sent email');
+  }
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
     const [
@@ -17,6 +23,11 @@ const Login = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const navigate = useNavigate();
+  let errorElement;
+  if (error) {   
+      errorElement = <p className="text-danger text-center">Error: {error?.message} </p>
+        
+    }
   if(user){
     if(user){
       navigate(from, { replace: true });
@@ -39,9 +50,7 @@ const Login = () => {
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control ref={emailRef} type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
+          
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -52,16 +61,18 @@ const Login = () => {
             placeholder="Password"
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
+        
+        {errorElement}
+        <Button className="btn btn-primary w-50 mx-auto d-block my-2" type="submit">
           Login
         </Button>
       </Form>
-      <p>New to Genius car? <span onClick={navigateRegister} className="text-danger">Register an account</span> </p>
+      <p>New to Genius car? <span onClick={navigateRegister} className="text-primary">Register an account</span> </p>
+      <p>Are you forget password? <span onClick={handleResetPassword} className="text-primary">Reset password</span> </p>
+    <SocialLogin></SocialLogin>
     </div>
   );
 };
 
 export default Login;
+
