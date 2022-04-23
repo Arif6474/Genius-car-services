@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import auth from "../../../firebase.init"
 import './Header.css'
+import PageTitle from '../PageTitle/PageTitle';
 
 const Header = () => {
    const [user, setUser] = useState({});
@@ -30,6 +31,7 @@ const Header = () => {
        
             <Navbar collapseOnSelect expand="lg" sticky="top" bg="dark" variant="dark">
   <Container>
+  <PageTitle title="Home"></PageTitle>
   <Navbar.Brand as={Link} to="/">Genius Car Services</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
@@ -46,6 +48,13 @@ const Header = () => {
     </Nav>
     <Nav>
       <Nav.Link as={Link} to="about">About</Nav.Link>
+      { 
+      user && <>
+           <Nav.Link as={Link} to="addservice">Service</Nav.Link>
+           <Nav.Link as={Link} to="manage">Manage</Nav.Link>
+      </>
+      
+      }
      { user?.email ? <button onClick={handleSignOut} className="logout-btn" >Logout</button> : 
      <Nav.Link as={Link} to="login">
        Login
